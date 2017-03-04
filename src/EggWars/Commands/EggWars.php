@@ -42,7 +42,7 @@ class EggWarsCommand extends Command{
                         $g->sendMessage(Je to /setlobby <arena> !!!!!!!!!");
                     }
                } elseif ($args[0] == "addshop") {
-                    //ADDSHOP villager 
+                    $this->createVillager($p->x, $p->y, $p->z, $p->yaw, $p->pitch, $p->getLevel(), $p);
             } else {
                 $g->sendMessage("§6Not permission");
             }
