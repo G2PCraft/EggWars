@@ -2,6 +2,8 @@
 
 namespace EggWars;
 
+use EggWars\Commands\EggWarsCommand;
+use EggWars\ArenaListener;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\Player;
