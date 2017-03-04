@@ -9,6 +9,7 @@ class Main extends PluginBase implements Listener{
     @mkdir($this->getDataFolder() . "Arenas");
     @mkdir($this->getDataFolder() . "Backups");
     self::registerEvents();
+    self::loadArenas();
   }
   
   public function registerEvents(){
@@ -35,6 +36,13 @@ class Main extends PluginBase implements Listener{
   "BLUE" => 4
     );
     return $tn;
+  }
+  
+  public function loadArenas($arena){
+     $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
+    foreach($arena as $arenas){
+      $this->getServer()->loadLevel($arenas){
+    }
   }
   
   public function addMarket(Player $o){
