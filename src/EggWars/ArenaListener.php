@@ -19,8 +19,8 @@ class ArenaListener implements Listener{
           if(!$this->ew->arenaExists($e->getLine(1)){
             $e->setLine(0, $this->ew->signprefix);
             $e->setLine(1, "§a$arena");
-            $e->setLine(2, "§e0/0");
-            $e->setLine(3, "§7---");
+            $e->setLine(2, "§3Lobby");
+            $e->setLine(3, "§e0/0");
         }elseif($e->getLine(0) == "spawner"){
             if(!empty($e->getLine(1)){
               switch($e->getLine(1)){
@@ -46,11 +46,15 @@ class ArenaListener implements Listener{
                
            public function onInteract(PlayerInteractEvent $e){
               $tile = $e->getTile();
+             $arena = $arena;
+                $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
              $p = $e->getPlayer();
              if($tile instanceof Sign){
                $text = $tile->getText();
                if($text[0] == $this->ew->signprefix){
-                 if($text[0] == 
+                 if($text[1] == $arena){
+                   
+                 }
                }
              }
          
