@@ -50,27 +50,24 @@ class ArenaListener implements Listener{
       }
   }
 
-   /* public function onDamage(EntityDamageEvent $e)
+    public function onDamage(EntityDamageEvent $e)
     {
-        $entity = $e->getEntity();
-        $cause = $e->getLastDamageCause();
-        if($cause instanceof EntityDamageByEntityEvent) {
-            if($entity instanceof Villager){
-                if($entity->getNameTag("§eMarket"){
-                $damager = $cause->getDamager();
-                $this->ew->addMarket($damager);
-                $e->setCancelled()´hrthrgjnetfečrhgzzhgbšrgšrFUCK!!!!!!!!!!!!!
-            }*/
+        {
+            $entity = $e->getEntity();
+            $cause = $e->getLastDamageCause();
+            if ($cause instanceof EntityDamageByEntityEvent) {
+                if ($entity instanceof Villager) {
+                    if ($entity->getNameTag("§eMarket")) {
+                        $damager = $cause->getDamager();
+                        $this->ew->addMarket($damager);
+                        $e->setCancelled();
+                    }
+                }
+            }
+        }
+    }
 
-
-
-
-
-
-
-
-               
-        
+       
                
            public function onInteract(PlayerInteractEvent $e)
            {
