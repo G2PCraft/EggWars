@@ -74,11 +74,13 @@ class Main extends PluginBase implements Listener{
   
   public function arenaExists($arena){
         $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
-            if(file_exists($this->getDataFolder()."Backups/".$ac->get("world")."/")){
+            if(file_exists($this->getDataFolder()."Backups/$arena)){
+              if(file_exists($this->getDataFolder()."Arenas/$arena.yml")){
                 return true;
             }else{
                 return false;
         }
+            }
     }
 }
 }
