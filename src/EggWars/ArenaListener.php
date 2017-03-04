@@ -55,11 +55,13 @@ class ArenaListener implements Listener{
                  if($text[1] == $acc){
                    if($text[2] == "§3Lobby"){
                      $p->sendMessage("Able to join arena");
+                     $ac->set($p->getName(), true);
+                     $ac->save();
                    }else{
                      $p->sendMessage("Arena is not in lobby"); 
                  } 
                  }else{
-                   $p->sendMessage("Arena dont exist stop using fake signs");e
+                   $p->sendMessage("Arena dont exist stop using fake signs");
                }elseif($text[0] == "§7Iron"){
                    if($text[0] == Color::GREEN){
                      //TODO CHECK FOR UPDATES
