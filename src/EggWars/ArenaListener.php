@@ -46,18 +46,21 @@ class ArenaListener implements Listener{
                
            public function onInteract(PlayerInteractEvent $e){
               $tile = $e->getTile();
-             $arena = $arena;
                 $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
              $p = $e->getPlayer();
              if($tile instanceof Sign){
                $text = $tile->getText();
                if($text[0] == $this->ew->signprefix){
-                 if($text[1] == $arena){
-                   
-                 }
-               }
-             }
-         
+                 foreach($ac as $acc){
+                 if($text[1] == $acc){
+                   if($text[2] == "§3Lobby"){
+                     $p->sendMessage("Able to join arena");
+                   }else{
+                     $p->sendMessage("Arena is not in lobby"); 
+                 } 
+                 }else{
+                   $p->sendMessage("Arena dont exist stop using fake signs");
+               }        
        }
      }
 }
