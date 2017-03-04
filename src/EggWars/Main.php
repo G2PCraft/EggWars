@@ -9,6 +9,7 @@ class Main extends PluginBase implements Listener{
     @mkdir($this->getDataFolder() . "Arenas");
     @mkdir($this->getDataFolder() . "Backups");
     self::registerEvents();
+    self::ins = $this;
     self::loadArenas();
   }
   
@@ -17,6 +18,11 @@ class Main extends PluginBase implements Listener{
     Server::getInstance()->getScheduler()->scheduleRepeatingTask(new GameTask($this), 20);
     Server::getInstance()->getScheduler()->scheduleRepeatingTask(new SignTask($this), 20);
   }
+  
+  public static function getInstance(){
+        return self::$ins;
+    }
+
   
   public function teams(){
     $teams = array(
