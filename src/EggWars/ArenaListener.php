@@ -24,12 +24,18 @@ class ArenaListener implements Listener{
         }elseif($e->getLine(0) == "spawner"){
             if(!empty($e->getLine(1)){
               switch($e->getLine(1)){
-                  case "iron"
+                  case "iron";
                     $e->setLine(0, "§7Iron");
-                    $e->setLine(1, "§eTime: §e0");
+                    $e->setLine(1, "§aTime: 0");
                     $e->setLine(2, "§d0 Iron");
                     $e->setLine(3, "§6---");
-                     }
+                  break;
+                    case "gold";
+                   $e->setLine(0, "§eGold");
+                    $e->setLine(1, "§aTime: 0");
+                    $e->setLine(2, "§d10 Gold");
+                    $e->setLine(3, "§6---");
+              }
           }
      }
 }
