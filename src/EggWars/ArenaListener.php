@@ -44,6 +44,8 @@ class ArenaListener implements Listener{
               }
           }
                
+        
+               
            public function onInteract(PlayerInteractEvent $e){
               $tile = $e->getTile();
                 $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
@@ -78,7 +80,7 @@ class ArenaListener implements Listener{
                      $p = >e->getPlayer();
                        $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
                      if($ac->get("gamers") == $p->getName()){
-                       if($e->getBlock()->getId() == in_array(), $this->breakableBlocks()){
+                       if($e->getBlock()->getId() == in_array(), $this->ew->breakableBlocks()){
                          $e->setCancelled(false);
                      }else{
                          $e->setCancelled(true);
