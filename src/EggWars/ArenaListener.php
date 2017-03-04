@@ -73,6 +73,19 @@ class ArenaListener implements Listener{
                          //TODO CHECK FOR UPDATES
                        }}
                    }
+                   
+                   public function onBreak(BlockBreakEvent $e){
+                     $p = >e->getPlayer();
+                       $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
+                     if($ac->get("gamers") == $p->getName()){
+                       if($e->getBlock()->getId() == in_array(), $this->breakableBlocks()){
+                         $e->setCancelled(false);
+                     }else{
+                         $e->setCancelled(true);
+                     }elseif($p->getLevel()->getName() == $ac->get("LobbyWorld")){
+                         $e->setCancelled();
+                         $p->sendMessage("Vim ze uz chces nekomu znicit vejce ale budes muset pockat:D");    
+                   }
                    public function onDamage(EntityDamageEvent $e){
                      $entity = $e->getEntity();
                      $cause = $e->getLastDanageCause();
