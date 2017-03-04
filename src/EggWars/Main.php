@@ -50,6 +50,30 @@ class Main extends PluginBase implements Listener{
       $this->getServer()->loadLevel($arenas){
     }
   }
+    
+    public function createVillager($x, $y, $z, $yaw, $pitch, Level $level  Player $p){
+        $nbt = new CompoundTag;
+        $nbt->Pos = new ListTag("Pos", [
+            new DoubleTag("", $x),
+            new DoubleTag("", $y),
+            new DoubleTag("", $z)
+        ]);
+        $nbt->Rotation = new ListTag("Rotation", [
+            new DoubleTag("", $yaw),
+            new DoubleTag("", $pitch)
+        ]);
+        $nbt->Motion = new ListTag("Motion", [
+            new DoubleTag("", 0),
+            new DoubleTag("", 0)
+        ]);
+        $nbt->Health = new ShortTag("Health", 10);
+        $nbt->CustomNameVisible = new ByteTag("CustomNameVisible", 1);
+        $level->loadChunk($x >> 4, $z >> 4);
+        $villager = Entity::createEntity("Villager", $p->getLevel(), $nbt, $p);
+        $villager->setNameTag("§eMarket");
+        $villager->spawnToAll();
+    }
+}
   
   public function addMarket(Player $o){
         $o->getLevel()->setBlock(new Vector3($o->getFloorX(), $o->getFloorY() - 4, $o->getFloorZ()), Block::get(Block::CHEST));
