@@ -74,7 +74,7 @@ class EggWarsCommand extends Command{
                             $g->sendMessage("Arena not found!!!!");
                         }
                     } else {
-                        $g->sendMessage(Je to /setlobby <arena> !!!!!!!!!");
+                        $g->sendMessage("Je to /setlobby <arena> !!!!!!!!!");
                     }
                } elseif ($args[0] == "addshop") {
                     $this->createVillager($p->x, $p->y, $p->z, $p->yaw, $p->pitch, $p->getLevel(), $p);
