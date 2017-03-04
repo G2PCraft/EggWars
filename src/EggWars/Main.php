@@ -17,6 +17,7 @@ class Main extends PluginBase implements Listener{
     Server::getInstance()->registerEvents(new ArenaListener($this), $this);
     Server::getInstance()->getScheduler()->scheduleRepeatingTask(new GameTask($this), 20);
     Server::getInstance()->getScheduler()->scheduleRepeatingTask(new SignTask($this), 20);
+    Server::getInstance()->getCommandMap()->register("EggWars", new EggWarsCommand());
   }
   
   public static function getInstance(){
