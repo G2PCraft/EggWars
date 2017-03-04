@@ -2,6 +2,19 @@
 
 namespace EggWars;
 
+use pocketmine\item\Item;
+use pocketmine\level\Level;
+use pocketmine\Player;
+use pocketmine\plugin\PluginBase;
+use pocketmine\Server;
+use pocketmine\utils\Config;
+use pocketmine\block\Block;
+use pocketmine\math\Vector3;
+use pocketmine\nbt\NBT;
+use pocketmine\nbt\tag\{CompoundTag, IntTag, ListTag, StringTag}; 
+use pocketmine\tile\{Tile, Chest};
+use pocketmine\entity\Entity;
+
 class Main extends PluginBase implements Listener{
   public $a;
   public function onEnable(){
