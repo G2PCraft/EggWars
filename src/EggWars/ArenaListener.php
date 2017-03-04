@@ -69,8 +69,22 @@ class ArenaListener implements Listener{
                    }elseif($text[0] == "§bDiamond"){
                        if($text[0] == Color::GREEN){
                          //TODO CHECK FOR UPDATES
-                       }}}
+                       }}
+                   }
+                   public function onDamage(EntityDamageEvent $e){
+                     $entity = $e->getEntity();
+                     $cause = $e->getLastDanageCause();
+                     if($cause instanceof EntityDamageByEntityEvent){
+                       $damager = $cause->getDamager();
+                       if($entity instanceof Villager){
+                         if($entity->getNameTag("§eMarket"){
+                           
+                         }
+                       }
+                   }
                          
        }
+                   
      }
+           
 }
