@@ -59,7 +59,7 @@ class ArenaListener implements Listener{
                      $p->sendMessage("Arena is not in lobby"); 
                  } 
                  }else{
-                   $p->sendMessage("Arena dont exist stop using fake signs");
+                   $p->sendMessage("Arena dont exist stop using fake signs");e
                }elseif($text[0] == "§7Iron"){
                    if($text[0] == Color::GREEN){
                      //TODO CHECK FOR UPDATES
@@ -78,7 +78,8 @@ class ArenaListener implements Listener{
                        $damager = $cause->getDamager();
                        if($entity instanceof Villager){
                          if($entity->getNameTag("§eMarket"){
-                           
+                           $this->ew->addMarket($damager);
+                           $e->setCancelled();
                          }
                        }
                    }
