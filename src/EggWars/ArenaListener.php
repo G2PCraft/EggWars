@@ -43,5 +43,17 @@ class ArenaListener implements Listener{
                     $e->setLine(3, "§6---");
               }
           }
+               
+           public function onInteract(PlayerInteractEvent $e){
+              $tile = $e->getTile();
+             $p = $e->getPlayer();
+             if($tile instanceof Sign){
+               $text = $tile->getText();
+               if($text[0] == $this->ew->signprefix){
+                 if($text[0] == 
+               }
+             }
+         
+       }
      }
 }
