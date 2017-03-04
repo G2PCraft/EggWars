@@ -10,7 +10,7 @@ class Main extends PluginBase implements Listener{
     @mkdir($this->getDataFolder() . "Backups");
     self::registerEvents();
     self::ins = $this;
-    self::loadArenas();
+    self::loadArenas();          
   }
   
   public function registerEvents(){
@@ -75,6 +75,11 @@ class Main extends PluginBase implements Listener{
             $tile->getInventory()->setItem($tile->getInventory()->getSize()-1, Item::get(Item::WOOL, 14, 1)); 
             $o->addWindow($tile->getInventory()); 
         }
+    }
+    
+    public function getPlayers($arena){
+      $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
+      return $ac->get("players");
     }
 
   
