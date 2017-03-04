@@ -51,6 +51,15 @@ class Main extends PluginBase implements Listener{
     }
   }
     
+    public function breakableBlocks(){
+      $blocks = array(
+        "Sandstone" => 24,
+        "Obsidian" => 49,
+        "Glass" => 20
+        );
+      return $blocks;
+    }
+    
     public function createVillager($x, $y, $z, $yaw, $pitch, Level $level  Player $p){
         $nbt = new CompoundTag;
         $nbt->Pos = new ListTag("Pos", [
