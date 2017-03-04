@@ -35,6 +35,12 @@ class ArenaListener implements Listener{
                     $e->setLine(1, "§aTime: 0");
                     $e->setLine(2, "§d10 Gold");
                     $e->setLine(3, "§6---");
+                  break;
+                  case "diamond";
+                   $e->setLine(0, "§bDiamond");
+                    $e->setLine(1, "§aTime: 0");
+                    $e->setLine(2, "§b10 Diamond");
+                    $e->setLine(3, "§6---");
               }
           }
      }
