@@ -35,6 +35,13 @@ class Main extends PluginBase implements Listener{
     return $teams;
   }
   
+  public function createBackUp($arena){
+      $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
+    $old = $this->getDataPatch() . "worlds/$arena");
+    $new = $this->getDataFolder() . "Backups/");
+    copy($old, $new);
+  }
+  
   public function teamNumber(){
   $tn = array(
   "RED" => 1,
