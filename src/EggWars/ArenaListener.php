@@ -60,7 +60,17 @@ class ArenaListener implements Listener{
                  } 
                  }else{
                    $p->sendMessage("Arena dont exist stop using fake signs");
-               }        
+               }elseif($text[0] == "§7Iron"){
+                   if($text[0] == Color::GREEN){
+                     //TODO CHECK FOR UPDATES
+                 }elseif($text[0] == "§cGold"){
+                     if($text[0] == Color::GREEN){
+                       //TODO CHECK FOR UPDATES
+                   }elseif($text[0] == "§bDiamond"){
+                       if($text[0] == Color::GREEN){
+                         //TODO CHECK FOR UPDATES
+                       }}}
+                         
        }
      }
 }
