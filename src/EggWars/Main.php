@@ -3,14 +3,14 @@
 namespace EggWars;
 
 class Main extends PluginBase implements Listener{
-  
+  public $a;
   public function onEnable(){
     @mkdir($this->getDataFolder());
     @mkdir($this->getDataFolder() . "Arenas");
     @mkdir($this->getDataFolder() . "Backups");
     self::registerEvents();
-    self::ins = $this;
-    self::loadArenas();          
+    self::$a = $this;
+      
   }
   
   public function registerEvents(){
@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener{
   }
   
   public static function getInstance(){
-        return self::$ins;
+        return self::$a;
     }
 
   
@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener{
   public function loadArenas($arena){
      $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
     foreach($arena as $arenas){
-      $this->getServer()->loadLevel($arenas){
+      $this->getServer()->loadLevel($arenas);
     }
   }
     
@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener{
       return $blocks;
     }
     
-    public function createVillager($x, $y, $z, $yaw, $pitch, Level $level  Player $p){
+    public function createVillager($x, $y, $z, $yaw, $pitch, Level $level,  Player $p){
         $nbt = new CompoundTag;
         $nbt->Pos = new ListTag("Pos", [
             new DoubleTag("", $x),
@@ -90,7 +90,7 @@ class Main extends PluginBase implements Listener{
         $villager->setNameTag("§eMarket");
         $villager->spawnToAll();
     }
-}
+
   
   public function addMarket(Player $o){
         $o->getLevel()->setBlock(new Vector3($o->getFloorX(), $o->getFloorY() - 4, $o->getFloorZ()), Block::get(Block::CHEST));
@@ -124,15 +124,15 @@ class Main extends PluginBase implements Listener{
     }
 
   
-  public function arenaExists($arena){
-        $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
-            if(file_exists($this->getDataFolder()."Backups/$arena)){
-              if(file_exists($this->getDataFolder()."Arenas/$arena.yml")){
-                return true;
-            }else{
-                return false;
-        }
-            }
-    }
-}
+  public function arenaExists($arena)
+  {
+      $ac = new Config($this->getDataFolder() . "Arenas/$arena.yml", Config::YAML);
+      if (file_exists($this->getDataFolder() . "Backups/$arena")) {
+          if (file_exists($this->getDataFolder() . "Arenas/$arena")) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+  }
 }
