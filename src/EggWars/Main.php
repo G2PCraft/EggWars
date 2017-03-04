@@ -36,4 +36,15 @@ class Main extends PluginBase implements Listener{
     );
     return $tn;
   }
+
+  
+  public function arenaExists($arena){
+        $ac = new Config($this->getDataFolder()."Arenas/$arena.yml", Config::YAML);
+            if(file_exists($this->getDataFolder()."Backups/".$ac->get("Dunya")."/")){
+                return true;
+            }else{
+                return false;
+        }
+    }
+}
 }
