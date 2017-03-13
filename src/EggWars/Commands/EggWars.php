@@ -2,6 +2,11 @@
 
 namespace EggWars;
 
+use EggWars\EggWars;
+use pocetmine\command\Command;
+use pocetmine\command\CommandSender;
+use pocketmine\Player;
+
 class EggWarsCommand extends Command{
 
     public function __construct(){
